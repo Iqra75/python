@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <style>
+    :root {
+      --primary: #4e54c8;
+      --secondary: #8f94fb;
+      --bg-light: #f4f6f8;
+      --bg-dark: #1e1e2f;
+      --text-dark: #222;
+      --text-light: #eee;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      margin: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      padding: 15px 25px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .about img {
+      width: 200px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    /* Dark Mode */
+    .dark {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .dark nav {
+      background: #2c2c3e;
+    }
+
+    .dark nav a {
+      color: #ccc;
+    }
+
+    .dark nav a:hover {
+      background: #444;
+      color: white;
+    }
+
+    .dark .card {
+      background: #2c2c3e;
+      color: #eee;
+    }
+
+    .dark footer {
+      background: #121212;
+    }
+
+    @media (max-width: 768px) {
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+
+  <header>
+    <h1>Areeba Ijaz</h1>
+    <p>Creative Web Developer & Designer</p>
+  </header>
+
+  <nav>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section id="about">
+    <div class="about">
+      <img src="E:/Wordpress/images.jpg" alt="Profile Picture" />
+      <div>
+        <h2>About Me</h2>
+        <p>Hello! I’m a passionate web developer skilled in HTML, CSS, JavaScript, and modern web frameworks. I love creating visually appealing, user-friendly websites that solve real problems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 style="text-align:center; margin-bottom: 30px;">Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Blog System</h3>
+        <p>Built using HTML, CSS & JavaScript,PHP and Laravel, MySQL. Fully responsive.</p>
+      </div>
+      <div class="card">
+        <h3>University Management System</h3>
+        <p>Built using HTML, CSS , Javascript and PHP Aand MySQL </p>
+      </div>
+      <div class="card">
+        <h3>Bakery Management System</h3>
+        <p>Built using HTML, CSS , Javascript and PHP Aand MySQL</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="text-align:center; margin-bottom: 30px;">Contact</h2>
+    <p style="text-align:center;">Email: xyz@example.com | GitHub: github.com/xyz | LinkedIn: linked.com/xyz</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Areeba Ijaz. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
